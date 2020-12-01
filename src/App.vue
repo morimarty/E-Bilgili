@@ -1,20 +1,18 @@
 <template>
   <div id="app">
     <Menu />
-    <div class="container">
-      <AskQuestion />
+    <div class="container pt-5">
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
 import Menu from "./components/app/Menu.vue";
-import AskQuestion from "./components/app/AskQuestion.vue";
 export default {
   name: "App",
   components: {
     Menu,
-    AskQuestion,
   },
 };
 </script>

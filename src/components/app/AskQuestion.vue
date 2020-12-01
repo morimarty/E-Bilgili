@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card text-center mt-5">
+    <div class="card text-center">
       <div class="card-header">Bize Soru Sorun!</div>
       <div class="card-body">
         <p class="card-text">

@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -14,11 +15,32 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item" v-for="(item, index) in menu" v-bind:key="index">
-            <a class="nav-link" :href="item.url">{{ item.name }}</a>
+        <ul class="navbar-nav mr-auto">
+          <li
+            class="nav-item"
+            v-for="(item, index) in menu"
+            v-bind:key="index"
+            v-show="item.type == 0"
+          >
+            <router-link :to="item.url" tag="a" class="nav-link">{{
+              item.name
+            }}</router-link>
           </li>
         </ul>
+        <div class="navbar-text">
+          <ul class="navbar-nav mr-auto">
+            <li
+              class="nav-item"
+              v-for="(item, index) in menu"
+              v-bind:key="index"
+              v-show="item.type == 1"
+            >
+              <router-link :to="item.url" tag="a" class="nav-link">{{
+                item.name
+              }}</router-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
@@ -31,16 +53,34 @@ export default {
     return {
       menu: [
         {
+          id: 0,
           name: "Ana Sayfa",
           url: "/",
+          type: 0,
         },
         {
+          id: 1,
           name: "Kayıt Ol",
-          url: "SignUp",
+          url: "/SignUp",
+          type: 1,
         },
         {
+          id: 2,
+          name: "Login",
+          url: "/SignIn",
+          type: 1,
+        },
+        {
+          id: 3,
           name: "Sorular",
           url: "Questions",
+          type: 0,
+        },
+        {
+          id: 4,
+          name: "Soru Ekle",
+          url: "AddQuestion",
+          type: 0,
         },
       ],
     };
