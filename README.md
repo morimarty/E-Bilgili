@@ -2,15 +2,15 @@
 
 ## Yapılacaklar
 
-admin kullanıcı soruları onaylar
-ana sayfa ,
-soru ekleme sayfası
-giriş sayfası
-kayıt ol sayfası
-soru liste sayfası
-soru detay sayfası
-cevapları beğen sorulaır beğen butonu
-yorumlar
+- admin kullanıcı soruları onaylar
+- ana sayfa
+- soru ekleme sayfası
+- giriş sayfası
+- kayıt ol sayfası
+- soru liste sayfası
+- soru detay sayfası
+- cevapları beğen sorulaır beğen butonu
+- yorumlar
 
 ## Project setup
 
