@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "E-Bilgili",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "bootstrap": "^4.5.3",
     "core-js": "^3.6.5",
+    "moment": "^2.29.1",
     "vue": "^2.6.11",
     "vue-router": "^3.4.9",
     "vue-toasted": "^1.1.28"

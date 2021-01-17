@@ -5,10 +5,12 @@
       <router-view
         @addQuestionToAdmin="addQuestionAdmin"
         @addQuestionToQuestionList="addQuestionQuestionList"
+        @addQuestionToMainpage="addQuestionMainpage"
         @loginChange="login"
         :isLogin="isLogin"
         :questions="questions"
         :approveQuestions="approveQuestions"
+        :mainQuestions="mainQuestions"
       ></router-view>
     </div>
   </div>
@@ -32,6 +34,16 @@ export default {
         },
       ],
       approveQuestions: [],
+      mainQuestions: [
+        {
+          id: 0,
+          name: "Spor öncesi beslenme nasıl olmalı",
+          content:
+            "\n                <p>Bu çalışmamızda, spor öncesi beslenme nasıl olmalı ve antreman sonrası beslenme önerileri hakkında bilimsel ve hemen uygulayabileceğiiz bilgilere yer verdik. Sorularınız olursa, yazının altına yorum olarak bırakabilirsiniz.</p>\n                <p>Spor yapan bireyler tarafından diyetisyenlere en sık sorulan sorulardan biri: “Spordan önce ve sonra ne yemeliyim?” Cevap bireye ve yaptığı aktiviteye bağlı olmakla birlikte bazı genel noktalar da bulunmaktadır.</p>\n                <p>Sporcu beslenmesinde yer alan beslenme önerileri genellikle profesyonel sporcular içindir. Yani bir dayanıklılık atleti, bir vücut geliştirmeci veya bir müsabakaya hazırlanan sporcular için özel beslenme stratejilerinden bahsedebiliriz. Tüm detaylar için, Profesyonel Sporcu Beslenmesi yazımıza göz atabilirsiniz.</p>\n                <p>Bunun dışında genel sağlık ve zindelik için egzersiz yapıyorsanız ve hedefleriniz daha mütevazı ise o zaman muhtemelen özel beslenme stratejisine ihtiyacınız yoktur. Her bir makro besin ögesinin spor öncesi ve sonrasında belirli bir rolü vardı</p>\n                ",
+          author: "Ogeday Mercan",
+          fav: true,
+        },
+      ],
     };
   },
   methods: {
@@ -44,6 +56,9 @@ export default {
     },
     addQuestionQuestionList(question) {
       this.approveQuestions.push(question);
+    },
+    addQuestionMainpage(question) {
+      this.mainQuestions.push(question);
     },
   },
 };

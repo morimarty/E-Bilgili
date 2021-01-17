@@ -45,6 +45,7 @@ export default {
         name: null,
         content: null,
         author: null,
+        fav: false,
       },
     };
   },
