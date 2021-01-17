@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-    <Menu />
+    <Menu :isLogin="isLogin" @loginChange="login" />
     <div class="container pt-5">
-      <router-view></router-view>
+      <router-view
+        @addQuestionToAdmin="addQuestionAdmin"
+        @addQuestionToQuestionList="addQuestionQuestionList"
+        @loginChange="login"
+        :isLogin="isLogin"
+        :questions="questions"
+        :approveQuestions="approveQuestions"
+      ></router-view>
     </div>
   </div>
 </template>
@@ -13,6 +20,31 @@ export default {
   name: "App",
   components: {
     Menu,
+  },
+  data() {
+    return {
+      isLogin: false,
+      questions: [
+        {
+          name: "Protein Tozu Zararlı mı?",
+          content: "Bununla ilgili bir çok araştırma bulunmakta...",
+          author: "Ogeday Mercan",
+        },
+      ],
+      approveQuestions: [],
+    };
+  },
+  methods: {
+    login(val) {
+      console.log(val);
+      this.isLogin = val;
+    },
+    addQuestionAdmin(question) {
+      this.questions.push(question);
+    },
+    addQuestionQuestionList(question) {
+      this.approveQuestions.push(question);
+    },
   },
 };
 </script>

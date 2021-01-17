@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  name: "AddQuestion",
+  name: "AnswerQuestion",
   data() {
     return {
       question: {

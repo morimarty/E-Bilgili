@@ -30,16 +30,24 @@
 <script>
 export default {
   name: "SignIn",
+  props: {
+    isLogin: {
+      type: Boolean,
+    },
+  },
   data() {
     return {
       username: null,
       password: null,
       user: {
         id: 1,
-        username: "morimarty",
-        password: "654321",
+        username: "1",
+        password: "1",
       },
     };
+  },
+  created() {
+    console.log("signIn ", this.isLogin);
   },
   methods: {
     loginUser() {
@@ -47,10 +55,17 @@ export default {
         this.user.username == this.username &&
         this.user.password == this.password
       ) {
-        window.location.href = "/";
+        this.loginChange();
+        this.$toasted.show("Giriş Yapıldı", {
+          type: "success",
+        });
+        this.$router.push("/Admin");
       } else {
         this.$toasted.show("Bilgilerinizi kontrol ediniz!", { type: "error" });
       }
+    },
+    loginChange() {
+      this.$emit("loginChange", true);
     },
   },
 };

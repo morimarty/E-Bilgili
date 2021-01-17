@@ -8,8 +8,6 @@
     >
       <h5 class="card-header">
         {{ question.name }}
-        <button class="btn likeButtons dislike float-right">-</button>
-        <button class="btn likeButtons like float-right">+</button>
       </h5>
       <div class="card-body">
         <div v-html="question.content"></div>
@@ -26,6 +24,11 @@
 <script>
 export default {
   name: "Questions",
+  props: {
+    approveQuestions: {
+      type: Array,
+    },
+  },
   data() {
     return {
       questions: [
@@ -54,6 +57,13 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    if (this.approveQuestions.length > 0) {
+      this.approveQuestions.map((q) => {
+        this.questions.push(q);
+      });
+    }
   },
 };
 </script>
