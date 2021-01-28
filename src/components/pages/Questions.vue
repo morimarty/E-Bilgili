@@ -1,6 +1,18 @@
 <template>
   <div>
-    <h1></h1>
+    <div class="input-group mb-5">
+      <div class="input-group-append">
+        <button type="button" class="btn btn-outline-primary">
+          <img src="../../assets/mg.png" width="18" />
+        </button>
+      </div>
+      <div class="custom-file">
+        <input type="text" placeholder="Soru alanı" class="form-control" />
+      </div>
+      <div class="input-group-append">
+        <button type="button" class="btn btn-outline-primary">Soru Ara</button>
+      </div>
+    </div>
     <div
       class="card mb-5"
       v-for="question in questions"

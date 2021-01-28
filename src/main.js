@@ -16,7 +16,6 @@ import Admin from "./components/pages/Admin.vue";
 import AnswerQuestion from "./components/pages/AnswerQuestion.vue";
 library.add(faUserSecret);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
-
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(Toasted, {
